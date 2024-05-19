@@ -77,7 +77,6 @@ public class PipeTest {
 
         pipe.SetSlippery(true);
         var result1 = pipe.Accept(mechanic);
-        System.out.println("TestPipeAcceptSlippery 50% of failing must be solved");
 
         assertFalse("Slippery pipe shouldn't accept mechanic", result1);
     }
