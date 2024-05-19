@@ -8,7 +8,29 @@ public class Pipe extends Field{
     boolean Slippery = false;
     boolean Sticky = false;
     int DebuffTimer = 0;
+
+
     int TicksUntilBreakable = 0;
+
+    /**
+     * Getter/Setter for testing purposes only
+     */
+
+    public int getTicksUntilBreakable() {
+        return TicksUntilBreakable;
+    }
+
+    public void setTicksUntilBreakable(int ticksUntilBreakable) {
+        TicksUntilBreakable = ticksUntilBreakable;
+    }
+    /**
+     * Getter for testing purposes only
+     */
+
+    public GameController getGc() {
+        return gc;
+    }
+
     GameController gc;
     public Pipe(){
         gc=GameController.getInstance();
