@@ -82,6 +82,10 @@ public class Mechanic extends Player {
         }
         return false;
     }
+
+    @Override
+    public void Sabotage(){ }
+
     /**
      * Pumpát vesz fel a mezőről.
      */

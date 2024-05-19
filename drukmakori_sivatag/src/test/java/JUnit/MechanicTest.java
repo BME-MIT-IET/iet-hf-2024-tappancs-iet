@@ -1,11 +1,11 @@
 package JUnit;
 
-import drukmakori_sivatag.Drain;
-import drukmakori_sivatag.Mechanic;
-import drukmakori_sivatag.Pipe;
-import drukmakori_sivatag.Pump;
+import drukmakori_sivatag.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -102,5 +102,29 @@ public class MechanicTest {
         mechanic.Fix();
 
         assertFalse(pump1.isBroken());
+    }
+
+    @Test
+    public void testMechanicChangesPumpWithoutNeighbors() {
+        var pipe2 = new Pipe();
+        mechanic.SetPosition(pump1);
+        mechanic.ChangePump(pipe, pipe2);
+
+        assertEquals("Source must be null without neighbor", null, pump1.GetSrc());
+        assertEquals("Destination must be null without neighbor", null, pump1.GetDst());
+    }
+
+    @Test
+    public void testMechanicChangesPumpWithNeighbors() {
+        var pipe2 = new Pipe();
+        mechanic.SetPosition(pump1);
+        ArrayList<Field> neighbors = new ArrayList<>();
+        neighbors.add(pipe);
+        neighbors.add(pipe2);
+        pump1.SetNeighbors(neighbors);
+        mechanic.ChangePump(pipe, pipe2);
+
+        assertEquals("Pipe must be the source", pipe, pump1.GetSrc());
+        assertEquals("Pipe2 must be the destination", pipe2, pump1.GetDst());
     }
 }

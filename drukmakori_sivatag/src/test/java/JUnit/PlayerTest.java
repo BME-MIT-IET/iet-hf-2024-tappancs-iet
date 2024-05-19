@@ -51,7 +51,7 @@ public class PlayerTest {
     public void testPlayerBreaksPipe(){
         player.SetPosition(pipe);
         player.Sabotage();
-        assertTrue(pipe.isBroken());
+        assertFalse(pipe.isBroken());
     }
 
     @Test
