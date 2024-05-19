@@ -133,6 +133,10 @@ public class Mechanic extends Player {
     public void SetControlledPipe(Pipe p){
         ControlledPipe = p;
    }
+
+    public void setNumberOfEndpoints(int number){
+        NumberOfEndpoints = number;
+    }
     public void Details(){
         super.Details();
         String indent="\t\t";
