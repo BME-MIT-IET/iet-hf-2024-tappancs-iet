@@ -2,6 +2,23 @@ package drukmakori_sivatag;
 
 //Kesz
 public class Drain extends Field{
+
+    /**
+     * Getter and setter methods for testing purposes only!
+     */
+
+    public int getPipeCounter() {
+        return PipeCounter;
+    }
+
+    public int getTurnsUntilGenPipe() {
+        return TurnsUntilGenPipe;
+    }
+
+    public void setTurnsUntilGenPipe(int turnsUntilGenPipe) {
+        TurnsUntilGenPipe = turnsUntilGenPipe;
+    }
+
     int PipeCounter = 1;
     int TurnsUntilGenPipe = 3;
     private GameController gc;
