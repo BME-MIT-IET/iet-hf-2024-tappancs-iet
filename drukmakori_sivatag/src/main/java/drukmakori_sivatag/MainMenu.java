@@ -25,11 +25,11 @@ public class MainMenu extends JPanel {
     private JLabel label_team_count; // Csapatok létszámának címke
     private JLabel label_source_drain_count; // Források és ciszternák számának címke
     private JLabel label_turn_count; // Turnosok számának címke
-    private JTextField tfTeamCount; // Csapatok létszámának szövegmezője
-    private JTextField tfSourceAndDrain; // Források és ciszternák számának szövegmezője
-    private JTextField tfMaxRound; // Turnosok számának szövegmezője
-    private JButton bNewGame; // Új játék indítása gomb
-    private JButton bExit; // Kilépés a játékból gomb
+    public JTextField tfTeamCount; // Csapatok létszámának szövegmezője
+    public JTextField tfSourceAndDrain; // Források és ciszternák számának szövegmezője
+    public JTextField tfMaxRound; // Turnosok számának szövegmezője
+    public JButton bNewGame; // Új játék indítása gomb
+    public JButton bExit; // Kilépés a játékból gomb
     private JPanel panel; // Panel
     private String alapertek;
     /**
