@@ -4,11 +4,42 @@ import java.util.Random;
 
 public class Pipe extends Field{
     boolean Occupied = false;
+
+
     boolean HasWater = false;
     boolean Slippery = false;
     boolean Sticky = false;
     int DebuffTimer = 0;
+
+    /**
+     * Getter for testing purposes only
+     */
+
+    public boolean isHasWater() {
+        return HasWater;
+    }
+
     int TicksUntilBreakable = 0;
+
+    /**
+     * Getter/Setter for testing purposes only
+     */
+
+    public int getTicksUntilBreakable() {
+        return TicksUntilBreakable;
+    }
+
+    public void setTicksUntilBreakable(int ticksUntilBreakable) {
+        TicksUntilBreakable = ticksUntilBreakable;
+    }
+    /**
+     * Getter for testing purposes only
+     */
+
+    public GameController getGc() {
+        return gc;
+    }
+
     GameController gc;
     public Pipe(){
         gc=GameController.getInstance();
@@ -91,9 +122,15 @@ public class Pipe extends Field{
             return false;
         }
         if(Slippery){
-            p.MoveTo(Neighbors.get(new Random().nextInt(0,2)));
-            //if(Main.isRandomEnabled) p.MoveTo(Neighbors.get(Main.random.nextInt(1)));
-            //else p.MoveTo(Neighbors.get(0) == p.GetPosition() ? Neighbors.get(1) : Neighbors.get(0));
+            if(Neighbors.size() < 2) {
+                p.MoveTo(Neighbors.get(0));
+            } else {
+                if(Main.isRandomEnabled) {
+                    p.MoveTo(Neighbors.get(new Random().nextInt(0,2)));
+                } else {
+                    p.MoveTo(Neighbors.get(0));
+                }
+            }
             return false;
         }
         Occupied=true;

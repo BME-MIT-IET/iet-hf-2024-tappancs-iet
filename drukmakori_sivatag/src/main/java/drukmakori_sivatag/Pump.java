@@ -5,8 +5,18 @@ import java.util.Random;
 //Kész
 public class Pump extends Field {
     Field src,dst;
+
+
     int Buffer = 0,BufferCap = 1;
     int TicksUntilBreak = new Random().nextInt(10);
+
+    /**
+     * Getter/Setter for testing purposes
+     */
+
+    public int getBuffer() {
+        return Buffer;
+    }
 
     /**
      * A pumpa step függvénye, mely minden

@@ -82,6 +82,10 @@ public class Mechanic extends Player {
         }
         return false;
     }
+
+    @Override
+    public void Sabotage(){ }
+
     /**
      * Pumpát vesz fel a mezőről.
      */
@@ -133,6 +137,10 @@ public class Mechanic extends Player {
     public void SetControlledPipe(Pipe p){
         ControlledPipe = p;
    }
+
+    public void setNumberOfEndpoints(int number){
+        NumberOfEndpoints = number;
+    }
     public void Details(){
         super.Details();
         String indent="\t\t";

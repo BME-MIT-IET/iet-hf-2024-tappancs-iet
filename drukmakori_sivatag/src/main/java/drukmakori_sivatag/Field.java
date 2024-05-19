@@ -3,7 +3,22 @@ package drukmakori_sivatag;
 import java.util.ArrayList;
 public abstract class Field implements Steppable {
     protected ArrayList<Field> Neighbors = new ArrayList<>();
+
+
     protected boolean IsBroken=false;
+
+
+    /**
+     * Getter/Setter for testing purposes only
+     */
+
+    public boolean isBroken() {
+        return IsBroken;
+    }
+
+    public void setBroken(boolean broken) {
+        IsBroken = broken;
+    }
     /**
      * Igazat ad vissza ,ha a paraméterként megadott Field szomszédos azzal a Fieldel amelyen a függvényt meghívtuk.
      * Ha nem szomszédosak hamisat ad vissza.
