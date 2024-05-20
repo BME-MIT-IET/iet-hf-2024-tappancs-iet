@@ -74,15 +74,26 @@ public class GMechanic extends BaseShape{
      * @param target_y  Kattintott y koordináta.
      * @return Bool érték attól függően, hogy az adott pont a objektomon belü van-e.
      */
-    public boolean Intersect(int target_x,int target_y){
-        int[] xPoints = {x+24*((drawnScale%2)-1),x+5+24*((drawnScale%2)-1), x+10+24*((drawnScale%2)-1)};
-        int scaley=(drawnScale-1)/2;
-        int h=(int)Math.sqrt(10*10 - 5*5);
-        int[] yPoints = {y-scaley*3*h-5, y-h*3*scaley-h-5, y-scaley*3*h-5};
+    public boolean Intersect(int target_x, int target_y) {
+        int[] xPoints = {x + 24 * ((drawnScale % 2) - 1), x + 5 + 24 * ((drawnScale % 2) - 1), x + 10 + 24 * ((drawnScale % 2) - 1)};
+        int scaley = (drawnScale - 1) / 2;
+        int h = (int) Math.sqrt(10 * 10 - 5 * 5);
+        int[] yPoints = {y - scaley * 3 * h - 5, y - h * 3 * scaley - h - 5, y - scaley * 3 * h - 5};
 
-        if (target_x>=xPoints[0] && target_x<=xPoints[0]+xPoints[2]-xPoints[1] && target_y>=yPoints[0]-(yPoints[0]-yPoints[1]) && target_y<=yPoints[0]) return true;
-        return false;
+        boolean b1, b2, b3;
+
+        b1 = sign(target_x, target_y, xPoints[0], yPoints[0], xPoints[1], yPoints[1]) < 0.0f;
+        b2 = sign(target_x, target_y, xPoints[1], yPoints[1], xPoints[2], yPoints[2]) < 0.0f;
+        b3 = sign(target_x, target_y, xPoints[2], yPoints[2], xPoints[0], yPoints[0]) < 0.0f;
+
+        return ((b1 == b2) && (b2 == b3));
     }
+
+
+    private float sign(int x1, int y1, int x2, int y2, int x3, int y3) {
+        return (x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3);
+    }
+
 
     /**
      * Visszaadja a referencia mehanicot.

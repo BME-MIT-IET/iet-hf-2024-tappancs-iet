@@ -23,9 +23,18 @@ public class GPipe extends BaseShape{
      * @return a középpont y koordinátája
      */
 
+    public void setCenterx(int centerx) {
+        this.centerx = centerx;
+    }
+
     public int getCentery() {
         return centery;
     }
+
+    public void setCentery(int centery){
+        this.centery = centery;
+    }
+
 
     private int centerx,centery;
     /**
