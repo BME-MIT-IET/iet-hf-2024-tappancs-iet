@@ -1,0 +1,38 @@
+BeginSave results/result3.txt outputonly
+New Drain
+New Pipe
+New Pipe
+New Pump
+New Drain
+New Mechanic
+New Mechanic
+SetAttribute drain1 Neighbors add pipe1
+SetAttribute pipe1 Neighbors add drain1
+SetAttribute pipe1 Neighbors add pump1
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pipe2 Neighbors add drain1
+SetAttribute pipe2 Neighbors add drain2
+SetAttribute drain1 Neighbors add pipe2
+SetAttribute drain1 PipeCounter 1
+SetAttribute drain2 Neighbors add pipe2
+SetAttribute mechanic1 Position drain1
+SetAttribute mechanic2 Position drain1
+SetPlayer mechanic1
+RequestPart Pipe
+Move pipe1
+Move pump1
+Place Pipe
+SetPlayer mechanic2
+RequestPart Pump
+Move pipe2
+Place Pump
+SetPlayer mechanic1
+Move pipe1
+Move drain1
+Move pipe2
+Move pump2
+Place Pipe
+ChangeFlow pipe2 pipe3
+SetPlayer mechanic2
+ChangeFlow pipe3 pipe2
+exit

@@ -1,0 +1,6 @@
+Started logging into file: results/result25.txt, type: outputonly
+New Saboteur created successfully: saboteur1
+New Pump created successfully: pump1
+Attribute Position changed to pump1 on saboteur1
+Currently selected player:saboteur1
+saboteur1 couldn’t apply Slippery debuff to pump1

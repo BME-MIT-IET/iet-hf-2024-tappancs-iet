@@ -1,0 +1,16 @@
+Started logging into file: results/result19.txt, type: outputonly
+New Saboteur created successfully: saboteur1
+New Pipe created successfully: pipe1
+New Source created successfully: source1
+New Drain created successfully: drain1
+source1 added to Neighbors of pipe1
+pipe1 added to Neighbors of source1
+drain1 added to Neighbors of pipe1
+pipe1 added to Neighbors of drain1
+Attribute Position changed to pipe1 on saboteur1
+Attribute Occupied changed to true on pipe1
+Currently selected player:saboteur1
+saboteur1 applied Sticky debuff to pipe1
+saboteur1 successfully moved to source1
+saboteur1 successfully moved to pipe1
+saboteur1 couldn’t move to drain1

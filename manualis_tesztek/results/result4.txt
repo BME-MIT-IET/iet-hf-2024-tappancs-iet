@@ -1,0 +1,38 @@
+Started logging into file: results/result4.txt, type: outputonly
+New Drain created successfully: drain1
+New Pipe created successfully: pipe1
+New Source created successfully: source1
+New Pump created successfully: pump1
+New Pipe created successfully: pipe2
+New Saboteur created successfully: saboteur1
+New Saboteur created successfully: saboteur2
+New Mechanic created successfully: mechanic1
+pipe1 added to Neighbors of drain1
+drain1 added to Neighbors of pipe1
+pipe1 added to Neighbors of pump1
+pump1 added to Neighbors of pipe1
+pipe2 added to Neighbors of source1
+source1 added to Neighbors of pipe2
+pipe2 added to Neighbors of pump1
+pump1 added to Neighbors of pipe2
+Attribute Src changed to pipe2 on pump1
+Attribute Dst changed to pipe1 on pump1
+Attribute Position changed to drain1 on saboteur1
+Attribute Position changed to pump1 on saboteur2
+Attribute Position changed to pipe2 on mechanic1
+Attribute Occupied changed to true on pipe2
+Attribute IsBroken changed to true on pipe2
+Currently selected player:saboteur1
+saboteur1 couldn’t sabotage
+saboteur1 successfully moved to pipe1
+saboteur1 sabotaged pipe1
+saboteur1 applied Sticky debuff to pipe1
+Currently selected player:saboteur2
+saboteur2 couldn’t sabotage
+Currently selected player:mechanic1
+mechanic1 successfully performed repair
+mechanic1 successfully moved to source1
+Currently selected player:saboteur2
+saboteur2 successfully moved to pipe2
+saboteur2 sabotaged pipe2
+saboteur2 applied Slippery debuff to pipe2

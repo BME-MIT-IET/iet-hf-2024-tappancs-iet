@@ -1,0 +1,10 @@
+BeginSave results/result5.txt outputonly
+New Mechanic
+New Source
+New Pipe
+SetAttribute mechanic1 Position source1
+SetAttribute pipe1 Neighbors add source1
+SetAttribute source1 Neighbors add pipe1
+SetPlayer mechanic1
+Move pipe1
+exit

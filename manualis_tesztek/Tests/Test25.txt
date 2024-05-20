@@ -1,0 +1,7 @@
+BeginSave results/result25.txt outputonly
+New Saboteur
+New Pump
+SetAttribute saboteur1 Position pump1
+SetPlayer saboteur1
+Debuff Slippery
+exit

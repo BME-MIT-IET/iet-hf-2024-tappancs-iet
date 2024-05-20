@@ -1,0 +1,18 @@
+Started logging into file: results/result26.txt, type: outputonly
+New Pump created successfully: pump1
+New Pump created successfully: pump2
+New Pump created successfully: pump3
+New Pipe created successfully: pipe1
+New Pipe created successfully: pipe2
+New Pipe created successfully: pipe3
+pipe1 added to Neighbors of pump1
+pipe2 added to Neighbors of pump2
+pipe1 added to Neighbors of pump2
+pipe3 added to Neighbors of pump3
+Calling step on every active object:
+	[STEP] pump1
+	[STEP] pump2
+	[STEP] pump3
+	[STEP] pipe1
+	[STEP] pipe2
+	[STEP] pipe3

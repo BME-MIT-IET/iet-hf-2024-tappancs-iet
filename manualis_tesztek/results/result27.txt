@@ -1,0 +1,20 @@
+Started logging into file: results/result27.txt, type: outputonly
+New Pipe created successfully: pipe1
+New Pump created successfully: pump1
+New Pump created successfully: pump2
+New Mechanic created successfully: mechanic1
+pipe1 added to Neighbors of pump1
+pump1 added to Neighbors of pipe1
+pipe1 added to Neighbors of pump2
+pump2 added to Neighbors of pipe1
+Attribute Position changed to pump1 on mechanic1
+Currently selected player:mechanic1
+Pipe pipe1 was disconnected by mechanic1
+Attribute Position changed to pump2 on mechanic1
+Pipe pipe1 was disconnected by mechanic1
+	Attributes:
+		Position: pump2
+		Stuck: false
+		NumberOfEndpoints: 2
+		ControlledPump: null
+		ControlledPipe: pipe1

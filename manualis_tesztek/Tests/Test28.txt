@@ -1,0 +1,8 @@
+BeginSave results/result28.txt outputonly
+New Mechanic
+New Pump
+SetAttribute mechanic1 Position pump1
+SetAttribute pump1 IsBroken true
+SetPlayer mechanic1
+Repair
+exit

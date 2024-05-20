@@ -1,0 +1,19 @@
+Started logging into file: results/result22.txt, type: outputonly
+New Pump created successfully: pump1
+New Mechanic created successfully: mechanic1
+New Pipe created successfully: pipe1
+Attribute Position changed to pump1 on mechanic1
+Attribute ControlledPipe changed to pipe1 on mechanic1
+Attribute NumberOfEndpoints changed to 2 on mechanic1
+Attribute TicksUntilBreak changed to 5 on pump1
+Currently selected player:mechanic1
+mechanic1 placed Pipe successfully
+	Neighbours:
+		pipe1
+Attributes:
+	IsBroken:false
+		Src: null
+		Dst: null
+		Buffer: 0
+		BufferCap: 1
+		TicksUntilBreakable: 5

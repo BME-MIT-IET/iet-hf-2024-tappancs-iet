@@ -1,0 +1,13 @@
+Started logging into file: results/result20.txt, type: outputonly
+New Drain created successfully: drain1
+New Mechanic created successfully: mechanic1
+Attribute Position changed to drain1 on mechanic1
+Attribute PipeCounter changed to 1 on drain1
+Currently selected player:mechanic1
+mechanic1 received new Pipe pipe1
+	Attributes:
+		Position: drain1
+		Stuck: false
+		NumberOfEndpoints: 1
+		ControlledPump: null
+		ControlledPipe: pipe1

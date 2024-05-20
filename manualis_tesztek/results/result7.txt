@@ -1,0 +1,9 @@
+Started logging into file: results/result7.txt, type: outputonly
+New Saboteur created successfully: saboteur1
+New Source created successfully: source1
+New Pipe created successfully: pipe1
+Attribute Position changed to source1 on saboteur1
+source1 added to Neighbors of pipe1
+pipe1 added to Neighbors of source1
+Currently selected player:saboteur1
+saboteur1 successfully moved to pipe1

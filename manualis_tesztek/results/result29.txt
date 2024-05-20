@@ -1,0 +1,26 @@
+Started logging into file: results/result29.txt, type: outputonly
+New Pump created successfully: pump1
+New Pipe created successfully: pipe1
+New Pipe created successfully: pipe2
+Attribute TicksUntilBreak changed to 1 on pump1
+pump1 added to Neighbors of pipe1
+pipe1 added to Neighbors of pump1
+pipe2 added to Neighbors of pump1
+pump1 added to Neighbors of pipe2
+Attribute Src changed to pipe1 on pump1
+Attribute Dst changed to pipe2 on pump1
+Attribute BufferCap changed to 100 on pump1
+Calling step on every active object:
+	[STEP] pump1
+	[STEP] pipe1
+	[STEP] pipe2
+	Neighbours:
+		pipe1
+		pipe2
+Attributes:
+	IsBroken:true
+		Src: pipe1
+		Dst: pipe2
+		Buffer: 0
+		BufferCap: 100
+		TicksUntilBreakable: 0

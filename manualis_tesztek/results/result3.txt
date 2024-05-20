@@ -1,0 +1,39 @@
+Started logging into file: results/result3.txt, type: outputonly
+New Drain created successfully: drain1
+New Pipe created successfully: pipe1
+New Pipe created successfully: pipe2
+New Pump created successfully: pump1
+New Drain created successfully: drain2
+New Mechanic created successfully: mechanic1
+New Mechanic created successfully: mechanic2
+pipe1 added to Neighbors of drain1
+drain1 added to Neighbors of pipe1
+pump1 added to Neighbors of pipe1
+pipe1 added to Neighbors of pump1
+drain1 added to Neighbors of pipe2
+drain2 added to Neighbors of pipe2
+pipe2 added to Neighbors of drain1
+Attribute PipeCounter changed to 1 on drain1
+pipe2 added to Neighbors of drain2
+Attribute Position changed to drain1 on mechanic1
+Attribute Position changed to drain1 on mechanic2
+Currently selected player:mechanic1
+mechanic1 received new Pipe pipe3
+mechanic1 successfully moved to pipe1
+mechanic1 successfully moved to pump1
+mechanic1 placed Pipe successfully
+Currently selected player:mechanic2
+mechanic2 received new Pump pump2
+mechanic2 successfully moved to pipe2
+mechanic2 placed Pump successfully
+Currently selected player:mechanic1
+mechanic1 successfully moved to pipe1
+mechanic1 successfully moved to drain1
+mechanic1 successfully moved to pipe2
+mechanic1 successfully moved to pump2
+mechanic1 couldn’t place Pipe
+Flow direction on Pump pump2 was changed to pipe2 -> pipe3 by mechanic1
+
+Currently selected player:mechanic2
+Flow direction on Pump pump2 was changed to pipe3 -> pipe2 by mechanic2
+

@@ -1,0 +1,16 @@
+Started logging into file: results/result1.txt, type: outputonly
+New Drain created successfully: drain1
+New Source created successfully: source1
+New Pipe created successfully: pipe1
+New Mechanic created successfully: mechanic1
+New Saboteur created successfully: saboteur1
+pipe1 added to Neighbors of drain1
+drain1 added to Neighbors of pipe1
+source1 added to Neighbors of pipe1
+pipe1 added to Neighbors of source1
+Attribute Position changed to source1 on mechanic1
+Attribute Position changed to drain1 on saboteur1
+Currently selected player:saboteur1
+saboteur1 successfully moved to pipe1
+Currently selected player:mechanic1
+mechanic1 couldn’t move to pipe1

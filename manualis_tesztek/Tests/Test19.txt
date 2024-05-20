@@ -1,0 +1,17 @@
+BeginSave results/result19.txt outputonly
+New Saboteur
+New Pipe
+New Source
+New Drain
+SetAttribute pipe1 Neighbors add source1
+SetAttribute source1 Neighbors add pipe1
+SetAttribute pipe1 Neighbors add drain1
+SetAttribute drain1 Neighbors add pipe1
+SetAttribute saboteur1 Position pipe1
+SetAttribute pipe1 Occupied true
+SetPlayer saboteur1
+Debuff Sticky
+Move source1
+Move pipe1
+Move drain1
+exit

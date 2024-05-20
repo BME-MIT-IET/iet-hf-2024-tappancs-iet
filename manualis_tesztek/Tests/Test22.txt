@@ -1,0 +1,12 @@
+BeginSave results/result22.txt outputonly
+New Pump
+New Mechanic
+New Pipe
+SetAttribute mechanic1 Position pump1
+SetAttribute mechanic1 ControlledPipe pipe1
+SetAttribute mechanic1 NumberOfEndpoints 2
+SetAttribute pump1 TicksUntilBreak 5
+SetPlayer mechanic1
+Place Pipe
+Details pump1
+exit

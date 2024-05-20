@@ -1,0 +1,8 @@
+BeginSave results/result21.txt outputonly
+New Drain
+New Mechanic
+SetAttribute mechanic1 Position drain1
+SetPlayer mechanic1
+RequestPart Pump
+Details mechanic1
+exit

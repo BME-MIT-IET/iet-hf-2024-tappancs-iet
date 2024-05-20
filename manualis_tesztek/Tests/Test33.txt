@@ -1,0 +1,7 @@
+BeginSave results/result33.txt outputonly
+New Mechanic
+New Pipe
+SetAttribute mechanic1 Position pipe1
+SetPlayer mechanic1
+RequestPart Pump
+exit
