@@ -15,3 +15,7 @@ __PumpTest__: Ez az osztály a pumpák különböző működési eseteit vizsgá
 __SourceTest__: A források esetében az egységtesztek biztosították, hogy a víztovábbítás helyesen működjön.
 
 __DrainTest__: A ciszternák tesztelésénél azt ellenőriztük, hogy generálódik-e cső, illetve, hogy sikerül-e felvenni a generált csövet különböző esetekben.
+
+# Lefedettség mérése
+
+A lefedettség méréséhez JaCoCo könyvtárat használtuk, de ezt jdk ütközés miatt csak lokálisan futtattuk. A futtatás során generálódik egy report, ahol megtekinthetőek az adott fájlok lefedettségei. A különböző időpontban elvégzett mérések eredményei a "JUnit tesztek" Issue-ban láthatóak.
