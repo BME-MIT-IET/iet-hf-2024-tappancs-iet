@@ -1,0 +1,39 @@
+BeginSave results/result4.txt outputonly
+New Drain
+New Pipe
+New Source
+New Pump
+New Pipe
+New Saboteur
+New Saboteur
+New Mechanic
+SetAttribute drain1 Neighbors add pipe1 
+SetAttribute pipe1 Neighbors add drain1 
+SetAttribute pump1 Neighbors add pipe1 
+SetAttribute pipe1 Neighbors add pump1 
+SetAttribute source1 Neighbors add pipe2 
+SetAttribute pipe2 Neighbors add source1 
+SetAttribute pump1 Neighbors add pipe2 
+SetAttribute pipe2 Neighbors add pump1 
+SetAttribute pump1 Src pipe2
+SetAttribute pump1 Dst pipe1
+SetAttribute saboteur1 Position drain1
+SetAttribute saboteur2 Position pump1
+SetAttribute mechanic1 Position pipe2
+SetAttribute pipe2 Occupied true
+SetAttribute pipe2 IsBroken true
+SetPlayer saboteur1
+Sabotage
+Move pipe1
+Sabotage
+Debuff Sticky
+SetPlayer saboteur2
+Sabotage
+SetPlayer mechanic1
+Repair
+Move source1
+SetPlayer saboteur2
+Move pipe2
+Sabotage
+Debuff Slippery
+exit

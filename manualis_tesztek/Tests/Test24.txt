@@ -1,0 +1,11 @@
+BeginSave results/result24.txt outputonly
+New Pipe
+New Pump
+New Mechanic
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pipe1 Neighbors add pump1 
+SetAttribute mechanic1 Position pump1
+SetPlayer mechanic1
+Disconnect pipe1
+Details mechanic1
+exit

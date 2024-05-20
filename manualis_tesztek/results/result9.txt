@@ -1,0 +1,17 @@
+Started logging into file: results/result9.txt, type: outputonly
+New Mechanic created successfully: mechanic1
+New Pipe created successfully: pipe1
+New Pipe created successfully: pipe2
+New Pump created successfully: pump1
+Attribute Position changed to pipe1 on mechanic1
+Attribute Occupied changed to true on pipe1
+Attribute IsBroken changed to true on pipe2
+pump1 added to Neighbors of pipe1
+pipe1 added to Neighbors of pump1
+pump1 added to Neighbors of pipe2
+pipe2 added to Neighbors of pump1
+Currently selected player:mechanic1
+mechanic1 successfully performed repair
+mechanic1 successfully moved to pump1
+mechanic1 successfully moved to pipe2
+mechanic1 successfully performed repair

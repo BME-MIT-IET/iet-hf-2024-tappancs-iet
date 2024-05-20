@@ -1,0 +1,7 @@
+BeginSave results/result13.txt outputonly
+New Saboteur
+New Pipe
+SetAttribute saboteur1 Position pipe1
+SetPlayer saboteur1
+Debuff Sticky
+exit

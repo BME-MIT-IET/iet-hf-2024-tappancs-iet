@@ -1,0 +1,18 @@
+BeginSave results/result15.txt outputonly
+New Saboteur
+New Pump
+New Pipe
+New Pipe
+New Pipe
+SetAttribute saboteur1 Position pump1
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pump1 Neighbors add pipe2
+SetAttribute pump1 Neighbors add pipe3
+SetAttribute pipe1 Neighbors add pump1 
+SetAttribute pipe2 Neighbors add pump1 
+SetAttribute pipe3 Neighbors add pump1 
+SetAttribute pump1 Src pipe1
+SetAttribute pump1 Dst pipe2
+SetPlayer saboteur1 
+ChangeFlow pipe2 pipe3
+exit

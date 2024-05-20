@@ -1,0 +1,15 @@
+BeginSave results/result29.txt outputonly
+New Pump
+New Pipe
+New Pipe
+SetAttribute pump1 TicksUntilBreak 1
+SetAttribute pipe1 Neighbors add pump1
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pump1 Neighbors add pipe2
+SetAttribute pipe2 Neighbors add pump1
+SetAttribute pump1 Src pipe1
+SetAttribute pump1 Dst pipe2
+SetAttribute pump1 BufferCap 100
+Step
+Details pump1
+exit

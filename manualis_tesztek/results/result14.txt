@@ -1,0 +1,18 @@
+Started logging into file: results/result14.txt, type: outputonly
+New Mechanic created successfully: mechanic1
+New Pump created successfully: pump1
+New Pipe created successfully: pipe1
+New Pipe created successfully: pipe2
+New Pipe created successfully: pipe3
+Attribute Position changed to pump1 on mechanic1
+pipe1 added to Neighbors of pump1
+pipe2 added to Neighbors of pump1
+pipe3 added to Neighbors of pump1
+pump1 added to Neighbors of pipe1
+pump1 added to Neighbors of pipe2
+pump1 added to Neighbors of pipe3
+Attribute Src changed to pipe1 on pump1
+Attribute Dst changed to pipe2 on pump1
+Currently selected player:mechanic1
+Flow direction on Pump pump1 was changed to pipe2 -> pipe3 by mechanic1
+

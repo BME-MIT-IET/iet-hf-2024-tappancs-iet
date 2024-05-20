@@ -1,0 +1,13 @@
+BeginSave results/result26.txt outputonly
+New Pump
+New Pump
+New Pump
+New Pipe
+New Pipe
+New Pipe
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pump2 Neighbors add pipe2
+SetAttribute pump2 Neighbors add pipe1
+SetAttribute pump3 Neighbors add pipe3
+Step
+exit

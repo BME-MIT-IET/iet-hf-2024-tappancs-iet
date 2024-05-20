@@ -1,0 +1,9 @@
+BeginSave results/result20.txt outputonly
+New Drain
+New Mechanic
+SetAttribute mechanic1 Position drain1
+SetAttribute drain1 PipeCounter 1
+SetPlayer mechanic1
+RequestPart Pipe
+Details mechanic1
+exit

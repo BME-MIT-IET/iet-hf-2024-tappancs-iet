@@ -1,0 +1,10 @@
+BeginSave results/result36.txt outputonly
+New Mechanic
+New Pump
+New Pipe
+SetAttribute mechanic1 Position pump1
+SetAttribute pump1 Neighbors add pipe1
+SetAttribute pipe1 Neighbors add pump1
+SetPlayer mechanic1
+RequestPart Pipe
+exit

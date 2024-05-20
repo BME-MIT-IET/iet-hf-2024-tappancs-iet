@@ -1,0 +1,6 @@
+Started logging into file: results/result34.txt, type: outputonly
+New Mechanic created successfully: mechanic1
+New Source created successfully: source1
+Attribute Position changed to source1 on mechanic1
+Currently selected player:mechanic1
+mechanic1 couldn't receive Pump

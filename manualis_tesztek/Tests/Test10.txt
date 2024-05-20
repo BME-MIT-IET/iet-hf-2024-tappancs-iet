@@ -1,0 +1,7 @@
+BeginSave results/result10.txt outputonly
+New Mechanic
+New Pipe
+SetAttribute mechanic1 Position pipe1
+SetPlayer mechanic1
+Sabotage
+exit

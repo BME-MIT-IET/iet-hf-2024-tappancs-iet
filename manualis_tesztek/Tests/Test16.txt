@@ -1,0 +1,16 @@
+BeginSave results/result16.txt outputonly
+New Mechanic
+New Pipe
+New Source
+New Drain
+SetAttribute mechanic1 Position drain1
+SetAttribute pipe1 Slippery true
+SetAttribute pipe1 Neighbors add drain1
+SetAttribute drain1 Neighbors add pipe1
+SetAttribute pipe1 Neighbors add source1
+SetAttribute source1 Neighbors add pipe1
+SetRandom disabled
+SetPlayer mechanic1
+Move pipe1
+Move pipe1
+exit

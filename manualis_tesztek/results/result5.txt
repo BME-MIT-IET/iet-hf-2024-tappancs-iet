@@ -1,0 +1,9 @@
+Started logging into file: results/result5.txt, type: outputonly
+New Mechanic created successfully: mechanic1
+New Source created successfully: source1
+New Pipe created successfully: pipe1
+Attribute Position changed to source1 on mechanic1
+source1 added to Neighbors of pipe1
+pipe1 added to Neighbors of source1
+Currently selected player:mechanic1
+mechanic1 successfully moved to pipe1
