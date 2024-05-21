@@ -16,7 +16,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +26,5 @@ jobs:
         java-version: '20'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file drukmakori_sivatag/pom.xml
+    - name: Build and Test with Maven
+      run: mvn -B clean verify --file drukmakori_sivatag/pom.xml -Djava.awt.headless=true
