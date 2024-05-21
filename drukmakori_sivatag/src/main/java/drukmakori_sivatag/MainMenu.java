@@ -21,13 +21,13 @@ import java.awt.event.*;
 public class MainMenu extends JPanel {
     private JLabel lGameName; // Játék címke
     private JPanel pinputbox; // Bemeneti doboz panel
-    private Game game; // Játék objektum
+    public Game game; // Játék objektum
     private JLabel label_team_count; // Csapatok létszámának címke
     private JLabel label_source_drain_count; // Források és ciszternák számának címke
     private JLabel label_turn_count; // Turnosok számának címke
-    public JTextField tfTeamCount; // Csapatok létszámának szövegmezője
-    public JTextField tfSourceAndDrain; // Források és ciszternák számának szövegmezője
-    public JTextField tfMaxRound; // Turnosok számának szövegmezője
+    public static JTextField tfTeamCount; // Csapatok létszámának szövegmezője
+    public static JTextField tfSourceAndDrain; // Források és ciszternák számának szövegmezője
+    public static JTextField tfMaxRound; // Turnosok számának szövegmezője
     public JButton bNewGame; // Új játék indítása gomb
     public JButton bExit; // Kilépés a játékból gomb
     private JPanel panel; // Panel
@@ -280,6 +280,7 @@ public class MainMenu extends JPanel {
         });
     }
 
+
     /**
      * Az új játék indítását végrehajtó metódus.
      * Ellenőrzi a beviteli mezőkből kapott adatok helyességét, majd meghívja a játék objektum
@@ -293,30 +294,32 @@ public class MainMenu extends JPanel {
      * Ellenőrzi, hogy a maxRound értéke legalább 5. Ha nem, megjelenik egy hibaüzenet a felhasználónak.
      * Ha minden ellenőrzés sikeres, me
      */
-    private void newGame(){
-        {
-            int teamCount ;
-            int sourceAndDrainCount;
-            int maxRound ;
+    public boolean newGame() {
+        int teamCount;
+        int sourceAndDrainCount;
+        int maxRound;
 
-            try {
-                teamCount = Integer.parseInt(tfTeamCount.getText());
-                sourceAndDrainCount = Integer.parseInt(tfSourceAndDrain.getText());
-                maxRound = Integer.parseInt(tfMaxRound.getText());
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Hibás adatbevitel. Kérlek, adj meg érvényes számokat.", "Hibaüzenet", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+        try {
+            teamCount = Integer.parseInt(getTeamCountText());
+            sourceAndDrainCount = Integer.parseInt(getSourceAndDrainCountText());
+            maxRound = Integer.parseInt(getMaxRoundText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Hibás adatbevitel. Kérlek, adj meg érvényes számokat.", "Hibaüzenet", JOptionPane.ERROR_MESSAGE);
+            return false; // Sikertelen új játék indítás
+        }
 
-            if(teamCount > 5 || teamCount < 2){
-                JOptionPane.showMessageDialog(this,"A csapatok létszáma 2 és 5 között kell lennie","Hibaüzenet",JOptionPane.ERROR_MESSAGE);
-            } else if (sourceAndDrainCount>4 || sourceAndDrainCount < 2){
-                JOptionPane.showMessageDialog(this,"A ciszterna és a forrás számának 2 és 4 között kell lennie","Hibaüzenet",JOptionPane.ERROR_MESSAGE);
-            }else if (maxRound < 5 ){
-                JOptionPane.showMessageDialog(this,"A körök számának 5 és 99 között kell lennie","Hibaüzenet",JOptionPane.ERROR_MESSAGE);
-            }else{
-                game.StartGame(teamCount, sourceAndDrainCount, maxRound);
-            }
+        if (teamCount > 5 || teamCount < 2) {
+            JOptionPane.showMessageDialog(this, "A csapatok létszáma 2 és 5 között kell lennie", "Hibaüzenet", JOptionPane.ERROR_MESSAGE);
+            return false; // Sikertelen új játék indítás
+        } else if (sourceAndDrainCount > 4 || sourceAndDrainCount < 2) {
+            JOptionPane.showMessageDialog(this, "A ciszterna és a forrás számának 2 és 4 között kell lennie", "Hibaüzenet", JOptionPane.ERROR_MESSAGE);
+            return false; // Sikertelen új játék indítás
+        } else if (maxRound < 5) {
+            JOptionPane.showMessageDialog(this, "A körök számának 5 és 99 között kell lennie", "Hibaüzenet", JOptionPane.ERROR_MESSAGE);
+            return false; // Sikertelen új játék indítás
+        } else {
+            game.StartGame(teamCount, sourceAndDrainCount, maxRound);
+            return true; // Sikeres új játék indítás
         }
     }
     /**
@@ -349,5 +352,17 @@ public class MainMenu extends JPanel {
                 }
             }
         });
+    }
+
+    public String getTeamCountText() {
+        return tfTeamCount.getText();
+    }
+
+    public String getSourceAndDrainCountText() {
+        return tfSourceAndDrain.getText();
+    }
+
+    public String getMaxRoundText() {
+        return tfMaxRound.getText();
     }
 }
