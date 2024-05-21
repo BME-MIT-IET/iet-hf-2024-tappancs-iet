@@ -11,6 +11,8 @@ public class MainMenuTest {
 
     @Test
     public void testNewGameButtonActionPerformed() {
+        System.setProperty("java.awt.headless", "true");
+
         Game game = new Game();
         MainMenu mainMenu = new MainMenu(game);
 
@@ -28,11 +30,10 @@ public class MainMenuTest {
         assertEquals(10, expectedMaxRound);
     }
 
-
-
-
     @Test
     public void testTextFieldInputValidation() {
+        System.setProperty("java.awt.headless", "true");
+
         MainMenu mainMenu = new MainMenu(new Game());
 
         mainMenu.tfTeamCount.setText("-2");
