@@ -13,6 +13,8 @@ public class MainMenuTest {
     public static void setup() {
         if (Boolean.parseBoolean(System.getenv("CI"))) {
             System.setProperty("java.awt.headless", "true");
+        } else {
+            System.setProperty("java.awt.headless", "false");
         }
     }
 
