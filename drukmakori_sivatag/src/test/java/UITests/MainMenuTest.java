@@ -5,14 +5,15 @@ import drukmakori_sivatag.MainMenu;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainMenuTest {
 
     @BeforeAll
     public static void setup() {
-        System.setProperty("java.awt.headless", "true");
+        if (Boolean.parseBoolean(System.getenv("CI"))) {
+            System.setProperty("java.awt.headless", "true");
+        }
     }
 
     @Test
