@@ -541,7 +541,7 @@ public class GameView extends JPanel {
      */
     private String RequireInput(){
         selected = null;
-        while(selected == null);
+        while (selected == null);
         return Main.GetNameObs(selected.getRef());
     }
     /**

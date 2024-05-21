@@ -5,6 +5,7 @@ import java.util.Random;
 public class Pipe extends Field{
     boolean Occupied = false;
 
+
     boolean HasWater = false;
     boolean Slippery = false;
     boolean Sticky = false;
