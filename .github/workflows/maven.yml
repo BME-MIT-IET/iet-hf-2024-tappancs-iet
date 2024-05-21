@@ -27,4 +27,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build and Test with Maven
-      run: mvn -B clean verify --file pom.xml -Djava.awt.headless=false
+      run: mvn -B clean verify --file drukmakori_sivatag/pom.xml -Djava.awt.headless=false
