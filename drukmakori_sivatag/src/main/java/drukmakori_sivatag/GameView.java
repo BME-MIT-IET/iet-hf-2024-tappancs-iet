@@ -540,10 +540,7 @@ public class GameView extends JPanel {
      @return a felhasználó által kiválasztott elem neve
      */
     private String RequireInput(){
-        selected = null;
-        while (true) {
-            if(selected != null) break;
-        }
+
         return Main.GetNameObs(selected.getRef());
     }
     /**
