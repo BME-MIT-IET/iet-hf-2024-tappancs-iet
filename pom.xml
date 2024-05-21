@@ -60,5 +60,6 @@
                 </configuration>
             </plugin>
         </plugins>
+        <testSourceDirectory>drukmakori_sivatag/src/test</testSourceDirectory>
     </build>
 </project>
