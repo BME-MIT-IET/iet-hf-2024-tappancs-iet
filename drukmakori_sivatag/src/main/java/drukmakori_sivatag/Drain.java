@@ -70,8 +70,7 @@ public class Drain extends Field{
      */
     @Override
     public Field RequestPump(){
-        Pump generated=new Pump();
-        return generated;
+        return new Pump();
     }
 
     /**
