@@ -94,6 +94,8 @@ public class Drain extends Field{
         }
         else TurnsUntilGenPipe--;
     }
+    
+    @Override
     public void Details(){
         super.Details();
         Main.WriteIntoFilesAndConsole("/t/tPipeCounter:"+ PipeCounter,false);
