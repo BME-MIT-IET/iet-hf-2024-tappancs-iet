@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 import static java.lang.String.*;
 
 public class Functions {
+    private static final String NO_PLAYER = "No player selected";
     /**
      * A jelenleg kibválasztott játékos kér egy kiválasztott típusú komponenst
      * az általa elfoglalt Field-től.
@@ -41,7 +42,7 @@ public class Functions {
         String player = Main.GetNameObs(mech);
 
         if(mech == null){
-            Main.WriteIntoFilesAndConsole("No player selected, or player selected is not a Mechanic",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER + ", or player selected is not a Mechanic",false);
             return;
         }
         String part_type = args[1];
@@ -101,7 +102,7 @@ public class Functions {
 
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -150,7 +151,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -193,7 +194,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -249,7 +250,7 @@ public class Functions {
         String playerName = Main.GetNameObs(player);
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -299,7 +300,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(mech==null &&sabo==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -367,7 +368,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -408,7 +409,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(mech==null && sabo==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
         if(!args[1].contains("pipe") || !args[2].contains("pipe")){
@@ -555,7 +556,7 @@ public class Functions {
             pl=Main.GetAsSaboteur(Main.selectedPlayer);
         }
         if (pl==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
         try{
