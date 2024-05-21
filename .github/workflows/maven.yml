@@ -32,9 +32,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file drukmakori_sivatag/pom.xml
     - name: Run JUnit tests
-      run: mvn test --file drukmakori_sivatag/pom.xml
+      run: mvn test --file pom.xml
     - name: Run UI tests
-      run: mvn test --file drukmakori_sivatag/pom.xml -Dtest=UITests/*
+      run: mvn test --file pom.xml -Dtest=UITests/*
     - name: Cache SonarCloud packages
       uses: actions/cache@v2
       with:
