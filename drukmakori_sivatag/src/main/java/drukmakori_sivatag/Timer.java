@@ -30,6 +30,7 @@ public class Timer {
     public static void Tick(){
         for (var tmp:steppables ){
             tmp.Step();
+            
         }
 
     }
