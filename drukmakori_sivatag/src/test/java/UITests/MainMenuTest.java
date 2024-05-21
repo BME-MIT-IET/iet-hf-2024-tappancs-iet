@@ -2,17 +2,21 @@ package UITests;
 
 import drukmakori_sivatag.Game;
 import drukmakori_sivatag.MainMenu;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import javax.swing.*;
-import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainMenuTest {
 
+    @BeforeAll
+    public static void setup() {
+        System.setProperty("java.awt.headless", "true");
+    }
+
     @Test
     public void testNewGameButtonActionPerformed() {
-        System.setProperty("java.awt.headless", "true");
-
         Game game = new Game();
         MainMenu mainMenu = new MainMenu(game);
 
@@ -32,8 +36,6 @@ public class MainMenuTest {
 
     @Test
     public void testTextFieldInputValidation() {
-        System.setProperty("java.awt.headless", "true");
-
         MainMenu mainMenu = new MainMenu(new Game());
 
         mainMenu.tfTeamCount.setText("-2");
