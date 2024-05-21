@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Pipe extends Field{
     boolean Occupied = false;
-    private Random randomGen = new Random();
 
     boolean HasWater = false;
     boolean Slippery = false;
@@ -84,7 +83,7 @@ public class Pipe extends Field{
     @Override
     public void Fix(){
         IsBroken=false;
-        TicksUntilBreakable=randomGen.nextInt(10);
+        TicksUntilBreakable=new Random().nextInt(10);
     }
     /**
      * A függvény nem csinál semmit, mivel nem lehet csőre csövet kötni.
@@ -126,7 +125,7 @@ public class Pipe extends Field{
                 p.MoveTo(Neighbors.get(0));
             } else {
                 if(Main.isRandomEnabled) {
-                    p.MoveTo(Neighbors.get(randomGen.nextInt(0,2)));
+                    p.MoveTo(Neighbors.get(new Random().nextInt(0,2)));
                 } else {
                     p.MoveTo(Neighbors.get(0));
                 }

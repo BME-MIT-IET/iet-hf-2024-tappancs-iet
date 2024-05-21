@@ -1,5 +1,7 @@
 package drukmakori_sivatag;
 
+import jdk.internal.org.jline.utils.PumpReader;
+
 //Kesz
 public class Drain extends Field{
 
@@ -70,7 +72,8 @@ public class Drain extends Field{
      */
     @Override
     public Field RequestPump(){
-        return new Pump();
+        Pump generated = new Pump();
+        return generated;
     }
 
     /**
@@ -95,7 +98,6 @@ public class Drain extends Field{
         else TurnsUntilGenPipe--;
     }
     
-    @Override
     public void Details(){
         super.Details();
         Main.WriteIntoFilesAndConsole("/t/tPipeCounter:"+ PipeCounter,false);

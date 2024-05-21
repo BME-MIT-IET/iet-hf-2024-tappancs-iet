@@ -11,8 +11,6 @@ import static java.lang.String.*;
 
 public class Functions {
     private static final String NO_PLAYER = "No player selected";
-    private static final String STICKY = "Sticky";
-    private static final String SLIPPERY = "Slippery";
     /**
      * A jelenleg kibválasztott játékos kér egy kiválasztott típusú komponenst
      * az általa elfoglalt Field-től.
@@ -308,7 +306,7 @@ public class Functions {
 
         String dtype=args[1];
         Field pos=null;
-        if (dtype.equals(STICKY)){
+        if (dtype.equals("Sticky")){
             if (mech!=null){
                 mech.MakeSticky();
                 success=true;
@@ -318,7 +316,7 @@ public class Functions {
                 success=true;
             }
         }
-        else if (dtype.equals(SLIPPERY)){
+        else if (dtype.equals("Slippery")){
             if (sabo!=null){
                 sabo.MakeSlippery();
                 success=true;
@@ -1222,64 +1220,64 @@ public class Functions {
                         return;
                     }
                 }
-                else if(args[2].equals(SLIPPERY)){
+                else if(args[2].equals("Slippery")){
                     // Slippery
                     if(args.length == 4){
                         if(args[3].equals("true")){
                             p.SetSlippery(true);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "true", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", "Slippery", "true", args[1]),
                                     false);
                             return;
                         }
                         else if(args[3].equals("false")){
                             p.SetSlippery(false);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "false", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", "Slippery", "false", args[1]),
                                     false);
                             return;
                         }
                         else{
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
+                                    String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
                                     false);
                             return;
                         }
                     }
                     else{
                         Main.WriteIntoFilesAndConsole(
-                                String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
+                                String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
                                 false);
                         return;
                     }
                 }
-                else if(args[2].equals(STICKY)){
+                else if(args[2].equals("Sticky")){
                     // Sticky
                     if(args.length == 4){
                         if(args[3].equals("true")){
                             p.SetSticky(true);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", STICKY, "true", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", "Sticky", "true", args[1]),
                                     false);
                             return;
                         }
                         else if(args[3].equals("false")){
                             p.SetSticky(false);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", STICKY, "false", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", "Sticky", "false", args[1]),
                                     false);
                             return;
                         }
                         else{
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Couldn't change attribute %s on %s", STICKY, args[1]),
+                                    String.format("Couldn't change attribute %s on %s", "Sticky", args[1]),
                                     false);
                             return;
                         }
                     }
                     else{
                         Main.WriteIntoFilesAndConsole(
-                                String.format("Couldn't change attribute %s on %s", STICKY, args[1]),
+                                String.format("Couldn't change attribute %s on %s", "Sticky", args[1]),
                                 false);
                         return;
                     }
