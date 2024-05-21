@@ -12,6 +12,7 @@ import static java.lang.String.*;
 public class Functions {
     private static final String NO_PLAYER = "No player selected";
     private static final String STICKY = "Sticky";
+    private static final String SLIPPERY = "Slippery";
     /**
      * A jelenleg kibválasztott játékos kér egy kiválasztott típusú komponenst
      * az általa elfoglalt Field-től.
@@ -317,7 +318,7 @@ public class Functions {
                 success=true;
             }
         }
-        else if (dtype.equals("Slippery")){
+        else if (dtype.equals(SLIPPERY)){
             if (sabo!=null){
                 sabo.MakeSlippery();
                 success=true;
@@ -1221,33 +1222,33 @@ public class Functions {
                         return;
                     }
                 }
-                else if(args[2].equals("Slippery")){
+                else if(args[2].equals(SLIPPERY)){
                     // Slippery
                     if(args.length == 4){
                         if(args[3].equals("true")){
                             p.SetSlippery(true);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Slippery", "true", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "true", args[1]),
                                     false);
                             return;
                         }
                         else if(args[3].equals("false")){
                             p.SetSlippery(false);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Slippery", "false", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "false", args[1]),
                                     false);
                             return;
                         }
                         else{
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
+                                    String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
                                     false);
                             return;
                         }
                     }
                     else{
                         Main.WriteIntoFilesAndConsole(
-                                String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
+                                String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
                                 false);
                         return;
                     }
