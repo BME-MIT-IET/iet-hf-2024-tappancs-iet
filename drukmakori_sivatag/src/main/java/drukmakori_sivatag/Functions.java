@@ -464,14 +464,7 @@ public class Functions {
      */
     public static void Load(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Load",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Load",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Load", "Too many arguments for Load")) return;
         Scanner src;
         try{
             File f=new File(args[1]);
