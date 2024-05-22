@@ -755,14 +755,8 @@ public class Functions {
      *             Nincs szükséges bemeneti argumentum
      */
     public static void Step(String[] args){
-        if(args.length < 1){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 1){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 1, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
+
         if (Main.obs.size()==0){
             Main.WriteIntoFilesAndConsole("No steppable object exist",false);
             return;
