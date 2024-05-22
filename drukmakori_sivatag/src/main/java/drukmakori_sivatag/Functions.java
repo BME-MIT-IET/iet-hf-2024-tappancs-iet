@@ -429,14 +429,8 @@ public class Functions {
      */
     public static void BeginSave(String[] args){
         boolean success = false;
-        if(args.length < 3){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for BeginSave",false);
-            return;
-        }
-        else if(args.length > 3){
-            Main.WriteIntoFilesAndConsole("Too many arguments for BeginSave",false);
-            return;
-        }
+        if(!argCheck(args, 3, "Not enough arguments for BeginSave", "Too many arguments for BeginSave")) return;
+
         if (args[2].equals("inputonly")){
             Main.AddFiles(args[1],SaveMode.INPUTONLY);
             success=true;
