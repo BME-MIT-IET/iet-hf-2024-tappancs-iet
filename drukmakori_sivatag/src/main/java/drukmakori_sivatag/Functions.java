@@ -377,14 +377,7 @@ public class Functions {
      */
     public static void ChangeFlow(String[] args){
         boolean success = false;
-        if(args.length < 3){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ChangeFlow",false);
-            return;
-        }
-        else if(args.length > 3){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ChangeFlow",false);
-            return;
-        }
+        if(!argCheck(args, 3, "Not enough arguments for ChangeFlow", "Too many arguments for ChangeFlow")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
