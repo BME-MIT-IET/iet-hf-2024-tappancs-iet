@@ -80,14 +80,7 @@ public class Functions {
      */
     public static void Move(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Move",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Move",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Move", "Too many arguments for Move")) return;
 
         Player player = Main.GetAsMechanic(Main.selectedPlayer);
 
