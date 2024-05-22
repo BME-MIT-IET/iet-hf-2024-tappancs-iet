@@ -1,7 +1,6 @@
 package drukmakori_sivatag;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public abstract class BaseShape {
     protected int x;
