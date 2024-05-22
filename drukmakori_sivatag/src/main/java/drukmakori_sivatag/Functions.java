@@ -221,14 +221,7 @@ public class Functions {
      */
     public static void Disconnect(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Disconnect",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Disconnect",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Disconnect", "Too many arguments for Disconnect")) return;
 
         Mechanic player = Main.GetAsMechanic(Main.selectedPlayer);
         String playerName = Main.GetNameObs(player);
