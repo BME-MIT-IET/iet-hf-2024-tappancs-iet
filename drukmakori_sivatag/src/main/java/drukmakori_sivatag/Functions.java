@@ -599,14 +599,7 @@ public class Functions {
      *             args[1]: A kiválasztott objektum azonosítója
      */
     public static void Details(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Details",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Details",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Details", "Too many arguments for Details")) return;
         Field tmp;
         Player pl;
         if (args[1].contains("pipe")){
