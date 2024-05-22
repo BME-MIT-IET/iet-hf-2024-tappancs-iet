@@ -10,6 +10,11 @@ import java.util.concurrent.ExecutionException;
 import static java.lang.String.*;
 
 public class Functions {
+    private static final String NO_PLAYER = "No player selected";
+    private static final String STICKY = "Sticky";
+    private static final String SLIPPERY = "Slippery";
+    
+
     /**
      * A jelenleg kibválasztott játékos kér egy kiválasztott típusú komponenst
      * az általa elfoglalt Field-től.
@@ -28,20 +33,14 @@ public class Functions {
      */
     public static void RequestPart(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for RequestPart",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for RequestPart",false);
-            return;
-        }
+
+        if(!argCheck(args, 2, "Not enough arguments for RequestPart", "Too many arguments for RequestPart")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         String player = Main.GetNameObs(mech);
 
         if(mech == null){
-            Main.WriteIntoFilesAndConsole("No player selected, or player selected is not a Mechanic",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER + ", or player selected is not a Mechanic",false);
             return;
         }
         String part_type = args[1];
@@ -81,14 +80,7 @@ public class Functions {
      */
     public static void Move(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Move",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Move",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Move", "Too many arguments for Move")) return;
 
         Player player = Main.GetAsMechanic(Main.selectedPlayer);
 
@@ -101,7 +93,7 @@ public class Functions {
 
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -150,7 +142,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -180,20 +172,13 @@ public class Functions {
      */
     public static void Place(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Place",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Place",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Place", "Too many arguments for Place")) return;
 
         Mechanic player = Main.GetAsMechanic(Main.selectedPlayer);
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -236,20 +221,13 @@ public class Functions {
      */
     public static void Disconnect(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Disconnect",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Disconnect",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Disconnect", "Too many arguments for Disconnect")) return;
 
         Mechanic player = Main.GetAsMechanic(Main.selectedPlayer);
         String playerName = Main.GetNameObs(player);
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -269,6 +247,20 @@ public class Functions {
         else Main.WriteIntoFilesAndConsole(String.format("Pipe %s couldn’t be disconnected by %s", pipe, playerName),false);
 
     }
+
+
+    private static boolean argCheck(String[] args, int goodValue, String lowValueResponse, String highValueResponse){
+        if(args.length < goodValue){
+            Main.WriteIntoFilesAndConsole(lowValueResponse,false);
+            return false;
+        }
+        else if(args.length > goodValue){
+            Main.WriteIntoFilesAndConsole(highValueResponse,false);
+            return false;
+        }
+
+        return true;
+    }
     /**
      * A kiválasztott játékos megkísérel debuffot elhelyezni az
      * általa elfoglalt mezőn. A parancs akkor sikeres, ha
@@ -285,27 +277,20 @@ public class Functions {
      */
     public static void Debuff(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Debuff",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Debuff",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Debuff", "Too many arguments for Debuff")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
         String playerName = Main.selectedPlayer;
 
         if(mech==null &&sabo==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
         String dtype=args[1];
         Field pos=null;
-        if (dtype.equals("Sticky")){
+        if (dtype.equals(STICKY)){
             if (mech!=null){
                 mech.MakeSticky();
                 success=true;
@@ -315,11 +300,9 @@ public class Functions {
                 success=true;
             }
         }
-        else if (dtype.equals("Slippery")){
-            if (sabo!=null){
-                sabo.MakeSlippery();
-                success=true;
-            }
+        else if (dtype.equals(SLIPPERY) && sabo != null){
+            sabo.MakeSlippery();
+            success=true;
         }
 
         if (mech !=null){
@@ -367,7 +350,7 @@ public class Functions {
         String playerName = Main.selectedPlayer;
 
         if(player == null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
 
@@ -394,21 +377,14 @@ public class Functions {
      */
     public static void ChangeFlow(String[] args){
         boolean success = false;
-        if(args.length < 3){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ChangeFlow",false);
-            return;
-        }
-        else if(args.length > 3){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ChangeFlow",false);
-            return;
-        }
+        if(!argCheck(args, 3, "Not enough arguments for ChangeFlow", "Too many arguments for ChangeFlow")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
         String playerName = Main.selectedPlayer;
 
         if(mech==null && sabo==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
         if(!args[1].contains("pipe") || !args[2].contains("pipe")){
@@ -453,14 +429,8 @@ public class Functions {
      */
     public static void BeginSave(String[] args){
         boolean success = false;
-        if(args.length < 3){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for BeginSave",false);
-            return;
-        }
-        else if(args.length > 3){
-            Main.WriteIntoFilesAndConsole("Too many arguments for BeginSave",false);
-            return;
-        }
+        if(!argCheck(args, 3, "Not enough arguments for BeginSave", "Too many arguments for BeginSave")) return;
+
         if (args[2].equals("inputonly")){
             Main.AddFiles(args[1],SaveMode.INPUTONLY);
             success=true;
@@ -494,14 +464,7 @@ public class Functions {
      */
     public static void Load(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Load",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Load",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Load", "Too many arguments for Load")) return;
         Scanner src;
         try{
             File f=new File(args[1]);
@@ -542,20 +505,13 @@ public class Functions {
      */
     public static void ListNeighbors(String[] args){
         boolean success = false;
-        if(args.length < 1){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 1){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 1, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
         Player pl=Main.GetAsMechanic(Main.selectedPlayer);
         if (pl==null){
             pl=Main.GetAsSaboteur(Main.selectedPlayer);
         }
         if (pl==null){
-            Main.WriteIntoFilesAndConsole("No player selected",false);
+            Main.WriteIntoFilesAndConsole(NO_PLAYER,false);
             return;
         }
         try{
@@ -600,14 +556,8 @@ public class Functions {
      *             args[1]: A létrehozni kívánt objektum típusa
      */
     public static void New(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for New",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for New",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for New", "Too many arguments for New")) return;
+
         String tmp=args[1];
         if(tmp.equals("Pipe")){
             new Pipe();
@@ -649,14 +599,7 @@ public class Functions {
      *             args[1]: A kiválasztott objektum azonosítója
      */
     public static void Details(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Details",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Details",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Details", "Too many arguments for Details")) return;
         Field tmp;
         Player pl;
         if (args[1].contains("pipe")){
@@ -718,14 +661,8 @@ public class Functions {
      *             Nincs szükséges bemeneti argumentum
      */
     public static void ListObjects(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
+
         if (Main.obs.size()==0){
             Main.WriteIntoFilesAndConsole("No objects exist",false);
             return;
@@ -776,14 +713,8 @@ public class Functions {
      *             args[1]: A kiválasztani kívánt játékos azonosítója
      */
     public static void SetPlayer(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for SetPlayer",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for SetPlayer",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for SetPlayer", "Too many arguments for SetPlayer")) return;
+
         Player p=Main.GetAsMechanic(args[1]);
 
         if (p==null){
@@ -824,14 +755,8 @@ public class Functions {
      *             Nincs szükséges bemeneti argumentum
      */
     public static void Step(String[] args){
-        if(args.length < 1){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 1){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 1, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
+
         if (Main.obs.size()==0){
             Main.WriteIntoFilesAndConsole("No steppable object exist",false);
             return;
@@ -1219,64 +1144,64 @@ public class Functions {
                         return;
                     }
                 }
-                else if(args[2].equals("Slippery")){
+                else if(args[2].equals(SLIPPERY)){
                     // Slippery
                     if(args.length == 4){
                         if(args[3].equals("true")){
                             p.SetSlippery(true);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Slippery", "true", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "true", args[1]),
                                     false);
                             return;
                         }
                         else if(args[3].equals("false")){
                             p.SetSlippery(false);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Slippery", "false", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", SLIPPERY, "false", args[1]),
                                     false);
                             return;
                         }
                         else{
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
+                                    String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
                                     false);
                             return;
                         }
                     }
                     else{
                         Main.WriteIntoFilesAndConsole(
-                                String.format("Couldn't change attribute %s on %s", "Slippery", args[1]),
+                                String.format("Couldn't change attribute %s on %s", SLIPPERY, args[1]),
                                 false);
                         return;
                     }
                 }
-                else if(args[2].equals("Sticky")){
+                else if(args[2].equals(STICKY)){
                     // Sticky
                     if(args.length == 4){
                         if(args[3].equals("true")){
                             p.SetSticky(true);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Sticky", "true", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", STICKY, "true", args[1]),
                                     false);
                             return;
                         }
                         else if(args[3].equals("false")){
                             p.SetSticky(false);
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Attribute %s changed to %s on %s", "Sticky", "false", args[1]),
+                                    String.format("Attribute %s changed to %s on %s", STICKY, "false", args[1]),
                                     false);
                             return;
                         }
                         else{
                             Main.WriteIntoFilesAndConsole(
-                                    String.format("Couldn't change attribute %s on %s", "Sticky", args[1]),
+                                    String.format("Couldn't change attribute %s on %s", STICKY, args[1]),
                                     false);
                             return;
                         }
                     }
                     else{
                         Main.WriteIntoFilesAndConsole(
-                                String.format("Couldn't change attribute %s on %s", "Sticky", args[1]),
+                                String.format("Couldn't change attribute %s on %s", STICKY, args[1]),
                                 false);
                         return;
                     }
@@ -1839,14 +1764,8 @@ public class Functions {
      */
     public static void SetRandom(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            System.out.println("Not enough arguments for SetRandom");
-            return;
-        }
-        else if(args.length > 2){
-            System.out.println("Too many arguments for SetRandom");
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for SetRandom", "Too many arguments for SetRandom")) return;
+
         if(args[1].equals("enabled")){
             Main.isRandomEnabled = true;
             success = true;
