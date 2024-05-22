@@ -327,11 +327,9 @@ public class Functions {
                 success=true;
             }
         }
-        else if (dtype.equals(SLIPPERY)){
-            if (sabo!=null){
-                sabo.MakeSlippery();
-                success=true;
-            }
+        else if (dtype.equals(SLIPPERY) && sabo != null){
+            sabo.MakeSlippery();
+            success=true;
         }
 
         if (mech !=null){
