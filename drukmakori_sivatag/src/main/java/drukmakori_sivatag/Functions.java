@@ -271,6 +271,19 @@ public class Functions {
         else Main.WriteIntoFilesAndConsole(String.format("Pipe %s couldn’t be disconnected by %s", pipe, playerName),false);
 
     }
+    private static int  argCheck(String[] args, int len, String textOnFailLow, String textOnFailHigh){
+        if(args.length < len){
+            Main.WriteIntoFilesAndConsole(textOnFailLow,false);
+            return -1;
+        }
+        else if(args.length > len){
+            Main.WriteIntoFilesAndConsole(textOnFailHigh,false);
+            return -1;
+        }
+
+        return  0;
+    }
+
     /**
      * A kiválasztott játékos megkísérel debuffot elhelyezni az
      * általa elfoglalt mezőn. A parancs akkor sikeres, ha
@@ -287,14 +300,7 @@ public class Functions {
      */
     public static void Debuff(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Debuff",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Debuff",false);
-            return;
-        }
+        if(argCheck(args, 2, "Not enough arguments for Debuff", "Too many arguments for Debuff") == -1) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
@@ -396,14 +402,8 @@ public class Functions {
      */
     public static void ChangeFlow(String[] args){
         boolean success = false;
-        if(args.length < 3){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ChangeFlow",false);
-            return;
-        }
-        else if(args.length > 3){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ChangeFlow",false);
-            return;
-        }
+        
+        if(argCheck(args, 3, "Not enough arguments for ChangeFlow", "Too many arguments for ChangeFlow") == -1) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
