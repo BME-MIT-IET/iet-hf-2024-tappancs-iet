@@ -661,14 +661,8 @@ public class Functions {
      *             Nincs szükséges bemeneti argumentum
      */
     public static void ListObjects(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
+
         if (Main.obs.size()==0){
             Main.WriteIntoFilesAndConsole("No objects exist",false);
             return;
