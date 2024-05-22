@@ -1764,14 +1764,8 @@ public class Functions {
      */
     public static void SetRandom(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            System.out.println("Not enough arguments for SetRandom");
-            return;
-        }
-        else if(args.length > 2){
-            System.out.println("Too many arguments for SetRandom");
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for SetRandom", "Too many arguments for SetRandom")) return;
+
         if(args[1].equals("enabled")){
             Main.isRandomEnabled = true;
             success = true;
