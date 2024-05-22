@@ -556,14 +556,8 @@ public class Functions {
      *             args[1]: A létrehozni kívánt objektum típusa
      */
     public static void New(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for New",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for New",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for New", "Too many arguments for New")) return;
+
         String tmp=args[1];
         if(tmp.equals("Pipe")){
             new Pipe();
