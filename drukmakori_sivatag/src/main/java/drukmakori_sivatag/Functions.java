@@ -274,6 +274,20 @@ public class Functions {
         else Main.WriteIntoFilesAndConsole(String.format("Pipe %s couldn’t be disconnected by %s", pipe, playerName),false);
 
     }
+
+
+    private static boolean argCheck(String[] args, int goodValue, String lowValueResponse, String highValueResponse){
+        if(args.length < goodValue){
+            Main.WriteIntoFilesAndConsole(lowValueResponse,false);
+            return false;
+        }
+        else if(args.length > goodValue){
+            Main.WriteIntoFilesAndConsole(highValueResponse,false);
+            return false;
+        }
+
+        return true;
+    }
     /**
      * A kiválasztott játékos megkísérel debuffot elhelyezni az
      * általa elfoglalt mezőn. A parancs akkor sikeres, ha
@@ -290,14 +304,7 @@ public class Functions {
      */
     public static void Debuff(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for Debuff",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for Debuff",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for Debuff", "Too many arguments for Debuff")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         Saboteur sabo=Main.GetAsSaboteur(Main.selectedPlayer);
