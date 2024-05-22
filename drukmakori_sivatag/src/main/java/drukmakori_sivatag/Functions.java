@@ -505,14 +505,7 @@ public class Functions {
      */
     public static void ListNeighbors(String[] args){
         boolean success = false;
-        if(args.length < 1){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for ListNeighbors",false);
-            return;
-        }
-        else if(args.length > 1){
-            Main.WriteIntoFilesAndConsole("Too many arguments for ListNeighbors",false);
-            return;
-        }
+        if(!argCheck(args, 1, "Not enough arguments for ListNeighbors", "Too many arguments for ListNeighbors")) return;
         Player pl=Main.GetAsMechanic(Main.selectedPlayer);
         if (pl==null){
             pl=Main.GetAsSaboteur(Main.selectedPlayer);
