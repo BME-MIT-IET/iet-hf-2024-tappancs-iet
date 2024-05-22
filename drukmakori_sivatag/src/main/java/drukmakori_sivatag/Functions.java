@@ -33,14 +33,8 @@ public class Functions {
      */
     public static void RequestPart(String[] args){
         boolean success = false;
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for RequestPart",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for RequestPart",false);
-            return;
-        }
+
+        if(!argCheck(args, 2, "Not enough arguments for RequestPart", "Too many arguments for RequestPart")) return;
 
         Mechanic mech = Main.GetAsMechanic(Main.selectedPlayer);
         String player = Main.GetNameObs(mech);
