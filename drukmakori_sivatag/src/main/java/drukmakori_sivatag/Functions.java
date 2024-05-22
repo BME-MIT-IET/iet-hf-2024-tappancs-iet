@@ -713,14 +713,8 @@ public class Functions {
      *             args[1]: A kiválasztani kívánt játékos azonosítója
      */
     public static void SetPlayer(String[] args){
-        if(args.length < 2){
-            Main.WriteIntoFilesAndConsole("Not enough arguments for SetPlayer",false);
-            return;
-        }
-        else if(args.length > 2){
-            Main.WriteIntoFilesAndConsole("Too many arguments for SetPlayer",false);
-            return;
-        }
+        if(!argCheck(args, 2, "Not enough arguments for SetPlayer", "Too many arguments for SetPlayer")) return;
+
         Player p=Main.GetAsMechanic(args[1]);
 
         if (p==null){
